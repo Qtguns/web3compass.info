@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Compass - Your Guide to the Decentralized Web | Web3资源导航</title>
+    <meta name="description" content="Web3 Compass 是最全面的Web3资源导航站。探索区块链、DeFi、NFT学习资源、工具、新闻和社区，一站式指南助您驾驭去中心化世界。">
+    <meta name="keywords" content="Web3, 区块链, DeFi, NFT, 加密货币, 以太坊, 学习资源, Web3工具, 去中心化, 智能合约">
+    <meta name="author" content="Web3 Compass Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:title" content="Web3 Compass - 探索去中心化世界的最佳导航">
+    <meta property="og:description" content="发现Web3领域最优质的学习资源、工具、新闻和社区，助您轻松探索区块链世界。">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com">
+    <meta property="twitter:title" content="Web3 Compass - 探索去中心化世界的最佳导航">
+    <meta property="twitter:description" content="发现Web3领域最优质的学习资源、工具、新闻和社区，助您轻松探索区块链世界。">
+    <meta property="twitter:image" content="https://yourwebsite.com/twitter-image.jpg">
+    <style>
+        :root {
+            --primary: #5D55FA;
+            --primary-light: #7A74FB;
+            --primary-dark: #4A44C9;
+            --secondary: #00D0C5;
+            --secondary-light: #33DFDA;
+            --secondary-dark: #00A59D;
+            --accent: #FF4D94;
+            --dark: #121640;
+            --darker: #0C0F2A;
+            --light: #F5F7FF;
+            --light-gray: #E1E5F2;
+            --mid-gray: #9BA3B9;
+            --text: #3A3F5C;
+            --success: #0CBB7A;
+            --warning: #FFB443;
+            --error: #FF4D4D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, var(--dark), var(--darker));
+            padding: 100px 0 120px;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .compass-icon {
+            display: inline-block;
+            margin-right: 15px;
+            animation: pulse 3s infinite;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--light-gray);
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: var(--mid-gray);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(93, 85, 250, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(93, 85, 250, 0.4);
+        }
+        
+        /* Background Elements */
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(93, 85, 250, 0.15) 0%, rgba(93, 85, 250, 0) 70%);
+            top: -50px;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 208, 197, 0.15) 0%, rgba(0, 208, 197, 0) 70%);
+            bottom: 30px;
+            left: 15%;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 77, 148, 0.15) 0%, rgba(255, 77, 148, 0) 70%);
+            top: 30%;
+            left: 20%;
+            animation: float 12s ease-in-out infinite;
+        }
+        
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+        
+        /* Quick Access */
+        .quick-access {
+            margin-top: -60px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .quick-tools {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 5px;
+        }
+        
+        .tool-card {
+            flex: 0 0 auto;
+            width: 100px;
+            background: linear-gradient(145deg, rgba(18, 22, 64, 0.9), rgba(12, 15, 42, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(93, 85, 250, 0.2);
+            border: 1px solid rgba(93, 85, 250, 0.3);
+        }
+        
+        .tool-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: white;
+        }
+        
+        .tool-name {
+            font-size: 0.8rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            background: linear-gradient(145deg, rgba(18, 22, 64, 0.95), rgba(12, 15, 42, 0.85));
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 20px;
+            z-index: 10;
+            padding: 5px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px 5px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--mid-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: rgba(93, 85, 250, 0.15);
+            color: var(--light);
+        }
+        
+        .nav-item.active {
+            position: relative;
+        }
+        
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .nav-icon {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 20px;
+            padding-left: 50px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: rgba(93, 85, 250, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 20px rgba(93, 85, 250, 0.2);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--mid-gray);
+            font-size: 20px;
+        }
+        
+        /* Content Sections */
+        .section {
+            display: none;
+            margin-bottom: 80px;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--mid-gray);
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: linear-gradient(145deg, rgba(18, 22, 64, 0.6), rgba(12, 15, 42, 0.6));
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: rgba(93, 85, 250, 0.1);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        .card-description {
+            color: var(--mid-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .card-link {
+            display: flex;
+            align-items: center;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .card-link:hover {
+            color: var(--secondary-light);
+        }
+        
+        .card-link-icon {
+            margin-left: 8px;
+            transition: transform 0.2s ease;
+        }
+        
+        .card-link:hover .card-link-icon {
+            transform: translateX(3px);
+        }
+        
+        .card-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .card-tag.beginner {
+            background-color: rgba(12, 187, 122, 0.15);
+            color: var(--success);
+        }
+        
+        .card-tag.intermediate {
+            background-color: rgba(255, 180, 67, 0.15);
+            color: var(--warning);
+        }
+        
+        .card-tag.advanced {
+            background-color: rgba(255, 77, 77, 0.15);
+            color: var(--error);
+        }
+        
+        .card-tag.trending {
+            background-color: rgba(255, 77, 148, 0.15);
+            color: var(--accent);
+        }
+        
+        /* Lists */
+        .resource-list {
+            list-style: none;
+        }
+        
+        .resource-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .resource-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .resource-title a:hover {
+            color: var(--secondary);
+        }
+        
+        .resource-description {
+            color: var(--mid-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* News Section */
+        .news-section {
+            margin-bottom: 40px;
+        }
+        
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .news-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        .news-more {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+        
+        .news-list {
+            list-style: none;
+        }
+        
+        .news-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        
+        .news-date {
+            flex: 0 0 80px;
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+        }
+        
+        .news-content {
+            flex: 1;
+        }
+        
+        .news-item-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .news-item-title a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .news-item-title a:hover {
+            color: var(--secondary);
+        }
+        
+        .news-source {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+        }
+        
+        .news-source a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+        
+        /* Case Studies */
+        .case-study {
+            background: linear-gradient(145deg, rgba(18, 22, 64, 0.4), rgba(12, 15, 42, 0.4));
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .case-study-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin-right: 20px;
+            background: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-study-logo img {
+            max-width: 40px;
+            max-height: 40px;
+        }
+        
+        .case-study-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        .case-study-category {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .case-study-content {
+            margin-bottom: 25px;
+        }
+        
+        .case-study-description {
+            color: var(--mid-gray);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .case-study-highlight {
+            background: rgba(93, 85, 250, 0.1);
+            border-left: 3px solid var(--primary);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study-highlight-title {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 8px;
+        }
+        
+        .case-study-highlight-text {
+            color: var(--mid-gray);
+            font-size: 0.95rem;
+        }
+        
+        .case-study-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 18px;
+            background: rgba(93, 85, 250, 0.1);
+            color: var(--primary-light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .case-study-link:hover {
+            background: rgba(93, 85, 250, 0.2);
+        }
+        
+        .case-study-link-icon {
+            margin-left: 8px;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(145deg, rgba(93, 85, 250, 0.15), rgba(0, 208, 197, 0.15));
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+        }
+        
+        .newsletter-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .newsletter-description {
+            color: var(--mid-gray);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 8px 0 0 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: rgba(93, 85, 250, 0.5);
+        }
+        
+        .newsletter-button {
+            padding: 0 25px;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-button:hover {
+            background: linear-gradient(to right, var(--primary-light), var(--primary));
+        }
+        
+        .newsletter-note {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+        }
+        
+        .newsletter-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><path d="M150,0 L300,150 L150,300 L0,150 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center right;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            background: linear-gradient(to bottom, var(--darker), rgba(12, 15, 42, 0.95));
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .footer-description {
+            color: var(--mid-gray);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 12px;
+        }
+        
+        .footer-link a {
+            color: var(--mid-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-link a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .copyright {
+            color: var(--mid-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .nav-container {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+            
+            .nav-item {
+                flex: 0 0 auto;
+                padding: 12px 20px;
+                white-space: nowrap;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter {
+                padding: 30px 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+            
+            .newsletter-button {
+                width: 100%;
+                padding: 14px;
+                border-radius: 8px;
+            }
+            
+            .case-study {
+                padding: 20px;
+            }
+            
+            .case-study-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .case-study-logo {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 0 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .description {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="grid"></div>
+        </div>
+        
+        <div class="header-content">
+            <h1 class="logo"><span class="compass-icon">🧭</span>Web3 Compass</h1>
+            <h2 class="tagline">Navigate the Decentralized Future</h2>
+            <p class="description">Your comprehensive guide to Web3 resources, tools, and insights. Discover everything you need to explore and thrive in the decentralized web.</p>
+            <a href="#learn" class="cta-button">Start Exploring</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="quick-access">
+            <div class="quick-tools">
+                <a href="https://metamask.io" target="_blank" class="tool-card">
+                    <div class="tool-icon">🦊</div>
+                    <span class="tool-name">MetaMask</span>
+                </a>
+                <a href="https://uniswap.org" target="_blank" class="tool-card">
+                    <div class="tool-icon">🦄</div>
+                    <span class="tool-name">Uniswap</span>
+                </a>
+                <a href="https://opensea.io" target="_blank" class="tool-card">
+                    <div class="tool-icon">🌊</div>
+                    <span class="tool-name">OpenSea</span>
+                </a>
+                <a href="https://etherscan.io" target="_blank" class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <span class="tool-name">Etherscan</span>
+                </a>
+                <a href="https://coinmarketcap.com" target="_blank" class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <span class="tool-name">CoinMarketCap</span>
+                </a>
+                <a href="https://aave.com" target="_blank" class="tool-card">
+                    <div class="tool-icon">💸</div>
+                    <span class="tool-name">Aave</span>
+                </a>
+                <a href="https://snapshot.org" target="_blank" class="tool-card">
+                    <div class="tool-icon">🗳️</div>
+                    <span class="tool-name">Snapshot</span>
+                </a>
+                <a href="https://alchemy.com" target="_blank" class="tool-card">
+                    <div class="tool-icon">⚗️</div>
+                    <span class="tool-name">Alchemy</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="main-nav">
+            <div class="nav-container">
+                <div class="nav-item active" data-section="learn">
+                    <span class="nav-icon">📚</span>
+                    Learn Web3
+                </div>
+                <div class="nav-item" data-section="tools">
+                    <span class="nav-icon">🛠️</span>
+                    Tools & Platforms
+                </div>
+                <div class="nav-item" data-section="news">
+                    <span class="nav-icon">📰</span>
+                    News & Insights
+                </div>
+                <div class="nav-item" data-section="community">
+                    <span class="nav-icon">👥</span>
+                    Community & Events
+                </div>
+                <div class="nav-item" data-section="cases">
+                    <span class="nav-icon">📋</span>
+                    Case Studies
+                </div>
+            </div>
+        </div>
+        
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search for Web3 resources, tools, tutorials...">
+        </div>
+        
+        <!-- Learn Web3 Section -->
+        <div id="learn" class="section active">
+            <h2 class="section-title">Learn Web3</h2>
+            <p class="section-description">For newcomers and advanced users alike, these resources will help you understand Web3 fundamentals and develop your skills.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-tag beginner">Beginner</span>
+                    <div class="card-header">
+                        <div class="card-icon">📘</div>
+                        <h3 class="card-title">Web3 Basics</h3>
+                    </div>
+                    <p class="card-description">Learn about blockchain technology, decentralization, and how Web3 differs from traditional internet models.</p>
+                    <a href="https://ethereum.org/en/what-is-ethereum/" target="_blank" class="card-link">
+                        Explore Ethereum Fundamentals
+                        <span class="card-link-icon">→</span>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag intermediate">Intermediate</span>
+                    <div class="card-header">
+                        <div class="card-icon">👨‍💻</div>
+                        <h3 class="card-title">Smart Contracts</h3>
+                    </div>
+                    <p class="card-description">Understand how smart contracts work, their applications, and the basics of Solidity programming.</p>
+                    <a href="https://cryptozombies.io" target="_blank" class="card-link">
+                        Interactive Solidity Learning
+                        <span class="card-link-icon">→</span>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag beginner">Beginner</span>
+                    <div class="card-header">
+                        <div class="card-icon">🔐</div>
+                        <h3 class="card-title">Wallet Setup</h3>
+                    </div>
+                    <p class="card-description">Learn how to set up and secure your first crypto wallet with step-by-step guidance.</p>
+                    <a href="https://learn.metamask.io" target="_blank" class="card-link">
+                        MetaMask Learn
+                        <span class="card-link-icon">→</span>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag advanced">Advanced</span>
+                    <div class="card-header">
+                        <div class="card-icon">🏗️</div>
+                        <h3 class="card-title">Build a dApp</h3>
+                    </div>
+                    <p class="card-description">Complete guide to building your first decentralized application from start to finish.</p>
+                    <a href="https://learnweb3.io" target="_blank" class="card-link">
+                        Start Building
+                        <span class="card-link-icon">→</span>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag intermediate">Intermediate</span>
+                    <div class="card-header">
+                        <div class="card-icon">💰</div>
+                        <h3 class="card-title">DeFi Explained</h3>
+                    </div>
+                    <p class="card-description">Understand decentralized finance, its key protocols, and how to participate safely.</p>
+                    <a href="https://finematics.com" target="_blank" class="card-link">
+                        DeFi Video Explanations
+                        <span class="card-link-icon">→</span>
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag beginner">Beginner</span>
+                    <div class="card-header">
+                        <div class="card-icon">📜</div>
+                        <h3 class="card-title">Web3 Glossary</h3>
+                    </div>
+                    <p class="card-description">A comprehensive dictionary of Web3 terminology, from blockchain to zero-knowledge proofs.</p>
+                    <a href="https://web3.foundation/about/" target="_blank" class="card-link">
+                        Explore Web3 Terms
+                        <span class="card-link-icon">→</span>
+                    </a>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Video & Podcasts</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎬</div>
+                        <h3 class="card-title">YouTube Channels</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://youtube.com/@WhiteboardCrypto" target="_blank">Whiteboard Crypto</a>
+                            </div>
+                            <p class="resource-description">Visual explanations of crypto concepts for beginners.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://youtube.com/c/Finematics" target="_blank">Finematics</a>
+                            </div>
+                            <p class="resource-description">In-depth explanations of DeFi projects and protocols.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://youtube.com/c/CoinBureau" target="_blank">Coin Bureau</a>
+                            </div>
+                            <p class="resource-description">Cryptocurrency news, reviews, and market analysis.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎙️</div>
+                        <h3 class="card-title">Top Podcasts</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://bankless.com" target="_blank">Bankless</a>
+                            </div>
+                            <p class="resource-description">Cultural insights and strategies for navigating crypto.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://unchainedpodcast.com" target="_blank">Unchained (Laura Shin)</a>
+                            </div>
+                            <p class="resource-description">Interviews with industry pioneers and thought leaders.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://epicenter.tv" target="_blank">Epicenter</a>
+                            </div>
+                            <p class="resource-description">Deep technical discussions about blockchain technology.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tools & Platforms Section -->
+        <div id="tools" class="section">
+            <h2 class="section-title">Tools & Platforms</h2>
+            <p class="section-description">Essential tools and platforms to help you participate in the Web3 ecosystem, from wallets to development frameworks.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-tag beginner">Essential</span>
+                    <div class="card-header">
+                        <div class="card-icon">👛</div>
+                        <h3 class="card-title">Wallets</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://metamask.io" target="_blank">MetaMask</a>
+                            </div>
+                            <p class="resource-description">Popular Ethereum wallet with browser extension and mobile app.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://wallet.coinbase.com" target="_blank">Coinbase Wallet</a>
+                            </div>
+                            <p class="resource-description">User-friendly multi-chain crypto wallet for beginners.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://rainbow.me" target="_blank">Rainbow</a>
+                            </div>
+                            <p class="resource-description">Mobile Ethereum wallet with beautiful NFT support.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag trending">Trending</span>
+                    <div class="card-header">
+                        <div class="card-icon">💱</div>
+                        <h3 class="card-title">Exchanges</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://uniswap.org" target="_blank">Uniswap</a>
+                            </div>
+                            <p class="resource-description">Leading decentralized exchange for token swaps.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://opensea.io" target="_blank">OpenSea</a>
+                            </div>
+                            <p class="resource-description">Largest marketplace for NFTs and digital collectibles.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://curve.fi" target="_blank">Curve Finance</a>
+                            </div>
+                            <p class="resource-description">Specialized DEX for stablecoin trading with low fees.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag advanced">Developer</span>
+                    <div class="card-header">
+                        <div class="card-icon">⚒️</div>
+                        <h3 class="card-title">Development Tools</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://alchemy.com" target="_blank">Alchemy</a>
+                            </div>
+                            <p class="resource-description">Web3 development platform with powerful APIs.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://trufflesuite.com" target="_blank">Truffle Suite</a>
+                            </div>
+                            <p class="resource-description">Development environment for Ethereum smart contracts.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://hardhat.org" target="_blank">Hardhat</a>
+                            </div>
+                            <p class="resource-description">Ethereum development environment for professionals.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔍</div>
+                        <h3 class="card-title">Analytics</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://dune.com" target="_blank">Dune Analytics</a>
+                            </div>
+                            <p class="resource-description">Community-powered blockchain data visualization.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://etherscan.io" target="_blank">Etherscan</a>
+                            </div>
+                            <p class="resource-description">Ethereum blockchain explorer for transaction tracking.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://defillama.com" target="_blank">DeFi Llama</a>
+                            </div>
+                            <p class="resource-description">DeFi TVL rankings and multi-chain analytics.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💸</div>
+                        <h3 class="card-title">DeFi Platforms</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://aave.com" target="_blank">Aave</a>
+                            </div>
+                            <p class="resource-description">Leading decentralized lending and borrowing platform.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://compound.finance" target="_blank">Compound</a>
+                            </div>
+                            <p class="resource-description">Algorithmic money market protocol for lending assets.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://yearn.finance" target="_blank">Yearn Finance</a>
+                            </div>
+                            <p class="resource-description">Yield optimization protocol for maximizing returns.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag trending">Growing</span>
+                    <div class="card-header">
+                        <div class="card-icon">🏛️</div>
+                        <h3 class="card-title">Governance Tools</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://snapshot.org" target="_blank">Snapshot</a>
+                            </div>
+                            <p class="resource-description">Gasless, off-chain voting system for DAOs.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://aragon.org" target="_blank">Aragon</a>
+                            </div>
+                            <p class="resource-description">Platform for creating and managing DAOs.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://tally.xyz" target="_blank">Tally</a>
+                            </div>
+                            <p class="resource-description">Governance dashboard for DAO participation.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- News & Insights Section -->
+        <div id="news" class="section">
+            <h2 class="section-title">News & Insights</h2>
+            <p class="section-description">Stay informed with the latest developments, trends, and analysis in the Web3 space.</p>
+            
+            <div class="news-section">
+                <div class="news-header">
+                    <h3 class="news-title">Daily Web3 Headlines</h3>
+                    <a href="#" class="news-more">View All</a>
+                </div>
+                
+                <ul class="news-list">
+                    <li class="news-item">
+                        <div class="news-date">Mar 20, 2025</div>
+                        <div class="news-content">
+                            <h4 class="news-item-title">
+                                <a href="#" target="_blank">Ethereum's Next Upgrade: What to Expect from the Upcoming Protocol Changes</a>
+                            </h4>
+                            <div class="news-source">Source: <a href="https://decrypt.co" target="_blank">Decrypt</a></div>
+                        </div>
+                    </li>
+                    
+                    <li class="news-item">
+                        <div class="news-date">Mar 19, 2025</div>
+                        <div class="news-content">
+                            <h4 class="news-item-title">
+                                <a href="#" target="_blank">Major Financial Institutions Launch Consortium to Explore DeFi Integration</a>
+                            </h4>
+                            <div class="news-source">Source: <a href="https://coindesk.com" target="_blank">CoinDesk</a></div>
+                        </div>
+                    </li>
+                    
+                    <li class="news-item">
+                        <div class="news-date">Mar 18, 2025</div>
+                        <div class="news-content">
+                            <h4 class="news-item-title">
+                                <a href="#" target="_blank">NFT Market Shows Signs of Recovery with New Use Cases Beyond Digital Art</a>
+                            </h4>
+                            <div class="news-source">Source: <a href="https://theblock.co" target="_blank">The Block</a></div>
+                        </div>
+                    </li>
+                    
+                    <li class="news-item">
+                        <div class="news-date">Mar 17, 2025</div>
+                        <div class="news-content">
+                            <h4 class="news-item-title">
+                                <a href="#" target="_blank">Layer 2 Solutions See Record Adoption as Ethereum Scaling Becomes Priority</a>
+                            </h4>
+                            <div class="news-source">Source: <a href="https://cointelegraph.com" target="_blank">Cointelegraph</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <h3 class="section-title">Market Data</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Price Trackers</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://coingecko.com" target="_blank">CoinGecko</a>
+                            </div>
+                            <p class="resource-description">Comprehensive cryptocurrency price and market data.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://coinmarketcap.com" target="_blank">CoinMarketCap</a>
+                            </div>
+                            <p class="resource-description">Cryptocurrency ranking and market cap data.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://tradingview.com/crypto" target="_blank">TradingView</a>
+                            </div>
+                            <p class="resource-description">Advanced charting tools for technical analysis.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">Research & Analysis</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://messari.io" target="_blank">Messari</a>
+                            </div>
+                            <p class="resource-description">Crypto research, data, and insights for professionals.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://glassnode.com" target="_blank">Glassnode</a>
+                            </div>
+                            <p class="resource-description">On-chain metrics and market intelligence.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://tokenterminal.com" target="_blank">Token Terminal</a>
+                            </div>
+                            <p class="resource-description">Crypto projects compared by financial metrics.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="newsletter">
+                <div class="newsletter-bg"></div>
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">Stay Updated with Web3 Trends</h3>
+                    <p class="newsletter-description">Subscribe to our weekly digest of the best Web3 content, curated by experts.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Community & Events Section -->
+        <div id="community" class="section">
+            <h2 class="section-title">Community & Events</h2>
+            <p class="section-description">Connect with the Web3 community through forums, social media, and events both online and offline.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💬</div>
+                        <h3 class="card-title">Forums & Discussion</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://reddit.com/r/web3" target="_blank">Reddit - r/web3</a>
+                            </div>
+                            <p class="resource-description">General Web3 discussion community.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://reddit.com/r/ethereum" target="_blank">Reddit - r/ethereum</a>
+                            </div>
+                            <p class="resource-description">Technical Ethereum discussion forum.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://forum.web3.foundation" target="_blank">Web3 Foundation Forum</a>
+                            </div>
+                            <p class="resource-description">Technical discussions about Web3 technologies.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://ethereum-magicians.org" target="_blank">Ethereum Magicians</a>
+                            </div>
+                            <p class="resource-description">Forum for Ethereum protocol standards and improvements.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🐦</div>
+                        <h3 class="card-title">X Accounts to Follow</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://twitter.com/VitalikButerin" target="_blank">Vitalik Buterin</a>
+                            </div>
+                            <p class="resource-description">Ethereum co-founder and thought leader.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://twitter.com/a16zcrypto" target="_blank">a16z crypto</a>
+                            </div>
+                            <p class="resource-description">Venture capital insights on Web3.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://twitter.com/balajis" target="_blank">Balaji Srinivasan</a>
+                            </div>
+                            <p class="resource-description">Entrepreneur and Web3 visionary.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://twitter.com/ljxie" target="_blank">Linda Xie</a>
+                            </div>
+                            <p class="resource-description">Co-founder of Scalar Capital, DeFi insights.</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://twitter.com/cdixon" target="_blank">Chris Dixon</a>
+                            </div>
+                            <p class="resource-description">Web3 investor and strategist.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <span class="card-tag trending">Hot</span>
+                    <div class="card-header">
+                        <div class="card-icon">🗓️</div>
+                        <h3 class="card-title">Upcoming Events</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://ethglobal.com" target="_blank">ETHGlobal Paris</a>
+                            </div>
+                            <p class="resource-description">July 15-17, 2025 | In-person hackathon</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://consensus.coindesk.com" target="_blank">Consensus 2025</a>
+                            </div>
+                            <p class="resource-description">May 7-9, 2025 | Austin, TX | Industry conference</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://devcon.org" target="_blank">Devcon VII</a>
+                            </div>
+                            <p class="resource-description">October 10-13, 2025 | Bangkok | Developer conference</p>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-title">
+                                <a href="https://nftnyc.com" target="_blank">NFT.NYC</a>
+                            </div>
+                            <p class="resource-description">April 12-14, 2025 | New York | NFT conference</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💻</div>
+                        <h3 class="card-title">Developer Communities</h3>
+                    </div>
+                    
